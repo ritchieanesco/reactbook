@@ -2,26 +2,20 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Hello React</title>
+	<title>React components</title>
 </head>
 <body>
 	<div id="app"><!--my app renders here --></div>
 	<script src="react-15.0.2/build/react.js"></script>
 	<script src="react-15.0.2/build/react-dom.js"></script>
 	<script>
+		var Component = React.createClass({
+			render: function () {
+				return React.DOM.span(null, 'I\'m so custom');
+			}
+		})
 		ReactDOM.render(
-			React.DOM.h1({
-					className: 'my-heading',
-					htmlFor: 'me',
-					style: {
-						background: 'red',
-						color: 'white',
-						fontFamily: 'Verdana'
-					}
-				},
-				React.DOM.span(null, 'Hello'),
-				' world!'
-			),
+			React.createElement(Component),
 			document.getElementById('app')
 		);
 	</script>
